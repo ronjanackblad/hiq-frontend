@@ -39,7 +39,7 @@ function FileForm() {
             <input type="file" className="custom-file-input" id="inputGroupFile02" type="file"
               accept=".rtf,.txt,.md,.file"
               onChange={fileSelectedHandler} />
-            <label className="custom-file-label" for="inputGroupFile02">
+            <label className="custom-file-label" htmlFor="inputGroupFile02">
               {file
                 ? file.name
                 : 'Choose file..'}

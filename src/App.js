@@ -1,14 +1,14 @@
 
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';   
+import './App.css';
 import FileForm from './components/FileForm';
 
 const App = () => {
   return (
-    <div class="container py-3">
+    <div className="container py-3">
       <div className="d-flex flex-column justify-content-center align-items-center mt-5 p-2 shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="header">
+        <div className="header">
           <h1>Word Counter</h1>
           <p>~ Which is your most used word?</p>
         </div>
@@ -23,7 +23,6 @@ const App = () => {
         </div>
       </div>
     </div>
-
   );
 
 }
