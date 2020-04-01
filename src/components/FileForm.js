@@ -34,33 +34,38 @@ function FileForm() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div class="input-group mb-3">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile02" type="file"
+        <div className="input-group mb-3">
+          <div className="custom-file">
+            <input type="file" className="custom-file-input" id="inputGroupFile02" type="file"
               accept=".rtf,.txt,.md,.file"
               onChange={fileSelectedHandler} />
-            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+            <label className="custom-file-label" for="inputGroupFile02">
+              {file
+                ? file.name
+                : 'Choose file..'}
+            </label>
           </div>
-          <div class="input-group-append">
-            <button class="input-group-text" type="submit" id="inputGroupFileAddon02">Upload</button>
+          <div className="input-group-append">
+            <button className="input-group-text" type="submit">Upload</button>
           </div>
         </div>
-      {text ? (
-        <p className="most-used-word p-1">Your most used word is: { mostUsedWord} <br /> It was used { freq} times!</p>
-      ) : (
-          <div></div>
-        )}
-      <div className="container mt-3 overflow-auto">
         {text ? (
-          <pre>{text}</pre>
+          <p className="most-used-word p-1">Your most used word is: { mostUsedWord} <br /> It was used { freq} times!</p>
         ) : (
-            <p className="text-box-before"> {loading ?
-              <div class="spinner-border text-success" role="status">
-                <span class="sr-only">Loading...</span>
-              </div > : 'Displaying text here...'}</p>
+            <div></div>
           )}
+        <div className="container mt-3 overflow-auto">
+          {text && !loading ? (
+            <pre>{text}</pre>
+          ) : (
+              <p className="text-box-before"> {loading
+                ? <div className="d-flex justify-content-center">
+                  <div className="spinner-border text-success" role="status"></div>
+                </div>
+                : 'Displaying text here...'}</p>
+            )}
 
-      </div>
+        </div>
       </form>
     </div >
   );

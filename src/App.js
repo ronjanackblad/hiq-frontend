@@ -17,7 +17,7 @@ const App = () => {
           <FileForm></FileForm>
           <div>
             <div className="info-box rounded p-1 mt-2">
-              <p>Did you know? <br />Most common word in English is the word <a href="https://en.wikipedia.org/wiki/Most_common_words_in_English" target="_blank" title="https://en.wikipedia.org/wiki/Most_common_words_in_English">'the'</a></p>
+              <p className="text-center">Did you know? <br />Most common word in English is the word <a href="https://en.wikipedia.org/wiki/Most_common_words_in_English" target="_blank" title="https://en.wikipedia.org/wiki/Most_common_words_in_English">'the'</a></p>
             </div>
           </div>
         </div>
